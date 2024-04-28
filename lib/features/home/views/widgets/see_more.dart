@@ -11,7 +11,10 @@ class SeeMore extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: MediaQuery.sizeOf(context).height * 0.03,bottom: MediaQuery.sizeOf(context).height * 0.025,),
+      padding: EdgeInsets.only(
+        top: MediaQuery.sizeOf(context).height * 0.03,
+        bottom: MediaQuery.sizeOf(context).height * 0.025,
+      ),
       child: Row(
         children: [
           Text(
