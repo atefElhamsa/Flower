@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flower_app/core/utils/app_colors.dart';
+import 'package:flower_app/features/home/views/home_screen.dart';
 import 'package:flower_app/features/onboarding/data/models/onboarding_model.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -76,6 +77,12 @@ class OnBoardingScreen extends StatelessWidget {
                     MaterialButton(
                       onPressed: () {
                         if (index == onBoardingView.length - 1) {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(builder: (context){
+                              return const HomeScreen();
+                            }),
+                          );
                         } else {
                           pageController.animateToPage(index + 1,
                               duration: const Duration(seconds: 1),
