@@ -1,8 +1,8 @@
 import 'package:flower_app/core/utils/app_colors.dart';
 import 'package:flower_app/core/utils/app_images.dart';
 import 'package:flower_app/core/utils/app_texts.dart';
-import 'package:flower_app/features/best/views/widgets/see_best.dart';
 import 'package:flower_app/features/home/data/models/eatmodel.dart';
+import 'package:flower_app/features/home/views/widgets/sweet_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -43,7 +43,7 @@ class SeeBestSelling extends StatelessWidget {
             color: AppColors.rose,
           ),
           SizedBox(
-            height: MediaQuery.sizeOf(context).height * 0.02,
+            height: MediaQuery.sizeOf(context).height * 0.015,
           ),
           Expanded(
             child: GridView.builder(
@@ -54,7 +54,7 @@ class SeeBestSelling extends StatelessWidget {
                 mainAxisSpacing: 30,
               ),
               itemBuilder: (context, index) {
-                return SweetSee(
+                return SweetWidget(
                   name: snakes[index].name,
                   description: snakes[index].description,
                   price: snakes[index].price,
