@@ -2,8 +2,8 @@ import 'package:flower_app/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SweetWidget extends StatefulWidget {
-  const SweetWidget({
+class SweetSee extends StatefulWidget {
+  const SweetSee({
     super.key,
     required this.name,
     required this.description,
@@ -17,10 +17,10 @@ class SweetWidget extends StatefulWidget {
   final double price;
 
   @override
-  State<SweetWidget> createState() => _SweetWidgetState();
+  State<SweetSee> createState() => _SweetSeeState();
 }
 
-class _SweetWidgetState extends State<SweetWidget> {
+class _SweetSeeState extends State<SweetSee> {
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -78,7 +78,7 @@ class _SweetWidgetState extends State<SweetWidget> {
                                 fontWeight: FontWeight.w400,
                                 color: AppColors.brown,
                                 fontSize:
-                                    MediaQuery.sizeOf(context).height * 0.016,
+                                MediaQuery.sizeOf(context).height * 0.016,
                               ),
                             ),
                           ),
@@ -92,7 +92,7 @@ class _SweetWidgetState extends State<SweetWidget> {
                             widget.description,
                             style: TextStyle(
                               fontSize:
-                                  MediaQuery.sizeOf(context).height * 0.015,
+                              MediaQuery.sizeOf(context).height * 0.015,
                               color: AppColors.greyDesc,
                               fontWeight: FontWeight.w400,
                             ),
@@ -110,7 +110,7 @@ class _SweetWidgetState extends State<SweetWidget> {
                                   fontWeight: FontWeight.w700,
                                   color: AppColors.brown,
                                   fontSize:
-                                      MediaQuery.sizeOf(context).height * 0.023,
+                                  MediaQuery.sizeOf(context).height * 0.023,
                                 ),
                               ),
                             ),

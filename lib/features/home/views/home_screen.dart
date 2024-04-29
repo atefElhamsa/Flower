@@ -1,5 +1,6 @@
 import 'package:flower_app/core/utils/app_images.dart';
 import 'package:flower_app/core/utils/app_texts.dart';
+import 'package:flower_app/features/best/views/see_best_selling.dart';
 import 'package:flower_app/features/home/data/models/drinkmodel.dart';
 import 'package:flower_app/features/home/data/models/eatmodel.dart';
 import 'package:flower_app/features/home/views/widgets/bannar_widget.dart';
@@ -9,8 +10,14 @@ import 'package:flower_app/features/home/views/widgets/see_more.dart';
 import 'package:flower_app/features/home/views/widgets/sweet_widget.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,8 +46,11 @@ class HomeScreen extends StatelessWidget {
             const SliverToBoxAdapter(
               child: SearchHomeWidget(),
             ),
-            const SliverToBoxAdapter(
-              child: SeeMore(title: AppTexts.discoverByCategory),
+            SliverToBoxAdapter(
+              child: SeeMore(
+                title: AppTexts.discoverByCategory,
+                clickSeeAll: () {},
+              ),
             ),
             SliverToBoxAdapter(
               child: SizedBox(
@@ -62,13 +72,21 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            const SliverToBoxAdapter(
-              child: SeeMore(title: AppTexts.bestSelling),
+            SliverToBoxAdapter(
+              child: SeeMore(
+                title: AppTexts.bestSelling,
+                clickSeeAll: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context){
+                    return const SeeBestSelling();
+                  }));
+                },
+              ),
             ),
             SliverGrid.builder(
               itemCount: snakes.length,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
+                mainAxisSpacing: 30,
               ),
               itemBuilder: (context, index) {
                 return SweetWidget(
