@@ -2,14 +2,19 @@ import 'package:flower_app/core/utils/app_colors.dart';
 import 'package:flower_app/core/utils/app_images.dart';
 import 'package:flower_app/core/utils/app_texts.dart';
 import 'package:flower_app/core/widgets/divider.dart';
+import 'package:flower_app/features/home/data/models/eatmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../../home/data/models/eatmodel.dart';
 import '../../home/views/widgets/sweet_widget.dart';
 
-class SeeBestSelling extends StatelessWidget {
+class SeeBestSelling extends StatefulWidget {
   const SeeBestSelling({super.key});
 
+  @override
+  State<SeeBestSelling> createState() => _SeeBestSellingState();
+}
+
+class _SeeBestSellingState extends State<SeeBestSelling> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,27 +47,17 @@ class SeeBestSelling extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           const SliverToBoxAdapter(
-            child: DividerWidget()
+            child: DividerWidget(),
           ),
           SliverToBoxAdapter(
             child: SizedBox(
               height: MediaQuery.sizeOf(context).height * 0.015,
             ),
           ),
-          SliverGrid.builder(
-            itemCount: snakes.length,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              mainAxisSpacing: 30,
+          SliverToBoxAdapter(
+            child: SweetWidget(
+              itemCount: snakes.length,
             ),
-            itemBuilder: (context, index) {
-              return SweetWidget(
-                name: snakes[index].name,
-                description: snakes[index].description,
-                price: snakes[index].price,
-                image: snakes[index].image,
-              );
-            },
           ),
         ],
       ),

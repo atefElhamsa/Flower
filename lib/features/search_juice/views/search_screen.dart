@@ -1,5 +1,4 @@
 import 'package:flower_app/core/widgets/divider.dart';
-import 'package:flower_app/features/search_juice/views/data/models/juicemodel.dart';
 import 'package:flower_app/features/search_juice/views/widgets/juice_item_widget.dart';
 import 'package:flower_app/features/search_juice/views/widgets/search_widget.dart';
 import 'package:flutter/material.dart';
@@ -57,25 +56,7 @@ class SearchScreen extends StatelessWidget {
           SizedBox(
             height: MediaQuery.sizeOf(context).height * 0.04,
           ),
-          Expanded(
-            child: ListView.separated(
-              itemBuilder: (context, index) {
-                return JuiceItemWidget(
-                  title: juices[index].title,
-                  description: juices[index].description,
-                  image: juices[index].image,
-                  price: juices[index].price,
-                );
-              },
-              separatorBuilder: (context, index) {
-                return SizedBox(
-                  height: MediaQuery.sizeOf(context).height * 0.03,
-                );
-              },
-              itemCount: juices.length,
-              physics: const BouncingScrollPhysics(),
-            ),
-          ),
+          const JuiceItemWidget(),
         ],
       ),
     );

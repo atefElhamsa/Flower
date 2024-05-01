@@ -2,7 +2,6 @@ import 'package:flower_app/core/utils/app_images.dart';
 import 'package:flower_app/core/utils/app_texts.dart';
 import 'package:flower_app/features/best/views/see_best_selling.dart';
 import 'package:flower_app/features/home/data/models/drinkmodel.dart';
-import 'package:flower_app/features/home/data/models/eatmodel.dart';
 import 'package:flower_app/features/home/views/widgets/bannar_widget.dart';
 import 'package:flower_app/features/home/views/widgets/category_widget.dart';
 import 'package:flower_app/features/home/views/widgets/search_home_widget.dart';
@@ -76,26 +75,16 @@ class _HomeScreenState extends State<HomeScreen> {
               child: SeeMore(
                 title: AppTexts.bestSelling,
                 clickSeeAll: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
                     return const SeeBestSelling();
                   }));
                 },
               ),
             ),
-            SliverGrid.builder(
-              itemCount: 2,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                mainAxisSpacing: 30,
+            SliverToBoxAdapter(
+              child: SweetWidget(
+                itemCount: 2,
               ),
-              itemBuilder: (context, index) {
-                return SweetWidget(
-                  name: snakes[index].name,
-                  description: snakes[index].description,
-                  price: snakes[index].price,
-                  image: snakes[index].image,
-                );
-              },
             ),
           ],
         ),
