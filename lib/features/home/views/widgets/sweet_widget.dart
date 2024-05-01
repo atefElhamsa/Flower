@@ -28,7 +28,7 @@ class _SweetWidgetState extends State<SweetWidget> {
         children: [
           Container(
             width: MediaQuery.sizeOf(context).width * 0.4,
-            height: MediaQuery.sizeOf(context).height * 0.21,
+            height: MediaQuery.sizeOf(context).height * 0.207,
             decoration: BoxDecoration(
               color: AppColors.rose.withOpacity(0.25),
               borderRadius: BorderRadius.all(

@@ -83,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             SliverGrid.builder(
-              itemCount: snakes.length,
+              itemCount: 2,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 mainAxisSpacing: 30,

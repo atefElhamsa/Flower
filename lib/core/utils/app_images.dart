@@ -16,4 +16,7 @@ class AppImages {
   static const String donut = "assets/images/dount.png";
   static const String seeAll = "assets/images/seeall.png";
   static const String vector = "assets/images/Vector.png";
+  static const String chocolateMilkShake = "assets/images/chocolatemilkshake.png";
+  static const String mangoMilkShake = "assets/images/mangomilkshake.png";
+  static const String vanillaMilkShake = "assets/images/vanillamilkshake.png";
 }
