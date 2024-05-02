@@ -13,12 +13,14 @@ class ProductDetailsScreen extends StatelessWidget {
     required this.description,
     required this.image,
     required this.price,
+    required this.count,
   });
 
   final String title;
-  double price;
   final String description;
   final String image;
+  double price;
+  int count;
 
   @override
   Widget build(BuildContext context) {
@@ -66,6 +68,7 @@ class ProductDetailsScreen extends StatelessWidget {
         price: price,
         image: image,
         description: description,
+        count: count,
       ),
     );
   }

@@ -1,5 +1,6 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:flower_app/features/cart/views/cart_screen.dart';
 import 'package:flower_app/features/product/views/widgets/navigate_container.dart';
 import 'package:flower_app/features/product/views/widgets/total.dart';
 import 'package:flutter/material.dart';
@@ -15,33 +16,29 @@ class ProductBodyWidget extends StatefulWidget {
     required this.price,
     required this.image,
     required this.description,
+    required this.count,
   });
 
   final String title;
   final String image;
-  double price;
   final String description;
+  double price;
+  int count;
 
   @override
   State<ProductBodyWidget> createState() => _ProductBodyWidgetState();
 }
 
 class _ProductBodyWidgetState extends State<ProductBodyWidget> {
-  int count = 1;
-
+  int count = 0;
   void addCount() {
-    setState(() {
-      count += 1;
-    });
+    count += 1;
   }
 
   void minusCount() {
-    setState(() {
-      if (count <= 1) {
-      } else {
-        count -= 1;
-      }
-    });
+    if (count > 0) {
+      count -= 1;
+    }
   }
 
   @override
@@ -122,7 +119,9 @@ class _ProductBodyWidgetState extends State<ProductBodyWidget> {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        minusCount();
+                        setState(() {
+                          minusCount();
+                        });
                       },
                       child: Icon(
                         Icons.do_disturb_on_rounded,
@@ -144,7 +143,9 @@ class _ProductBodyWidgetState extends State<ProductBodyWidget> {
                     const Spacer(),
                     GestureDetector(
                       onTap: () {
-                        addCount();
+                        setState(() {
+                          addCount();
+                        });
                       },
                       child: Icon(
                         Icons.add_circle_outlined,
@@ -166,7 +167,20 @@ class _ProductBodyWidgetState extends State<ProductBodyWidget> {
             SizedBox(
               height: MediaQuery.sizeOf(context).height * 0.03,
             ),
-            const NavigateContainer(title: AppTexts.addToCart),
+            NavigateContainer(
+              title: AppTexts.addToCart,
+              click: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return CartScreen(
+                    title: widget.title,
+                    description: widget.description,
+                    image: widget.image,
+                    price: widget.price,
+                    count: widget.count,
+                  );
+                }));
+              },
+            ),
           ],
         ),
       ),

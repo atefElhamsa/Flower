@@ -28,6 +28,7 @@ class _JuiceItemWidgetState extends State<JuiceItemWidget> {
                     description: juices[index].description,
                     image: juices[index].image,
                     price: juices[index].price,
+                    count: juices[index].count,
                   );
                 }));
               },

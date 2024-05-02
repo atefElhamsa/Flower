@@ -4,13 +4,15 @@ import 'package:flower_app/core/utils/app_texts.dart';
 class JuiceModel {
   final String title;
   final String description;
-  double price;
   final String image;
+  double price;
+  int count;
   JuiceModel({
-    required this.image,
     required this.title,
     required this.description,
+    required this.image,
     required this.price,
+    this.count = 0,
   });
 }
 
