@@ -19,4 +19,6 @@ class AppImages {
   static const String chocolateMilkShake = "assets/images/chocolatemilkshake.png";
   static const String mangoMilkShake = "assets/images/mangomilkshake.png";
   static const String vanillaMilkShake = "assets/images/vanillamilkshake.png";
+  static const String orderComplete = "assets/images/complete.png";
+  static const String end = "assets/images/End.png";
 }

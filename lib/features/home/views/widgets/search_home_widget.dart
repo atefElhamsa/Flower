@@ -14,7 +14,7 @@ class SearchHomeWidget extends StatelessWidget {
         Expanded(
           child: GestureDetector(
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context){
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return const SearchScreen();
               }));
             },
@@ -46,7 +46,7 @@ class SearchHomeWidget extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context){
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
               return const SearchScreen();
             }));
           },
@@ -57,7 +57,8 @@ class SearchHomeWidget extends StatelessWidget {
               borderRadius: BorderRadius.only(
                 bottomRight:
                     Radius.circular(MediaQuery.sizeOf(context).width * 0.04),
-                topLeft: Radius.circular(MediaQuery.sizeOf(context).width * 0.04),
+                topLeft:
+                    Radius.circular(MediaQuery.sizeOf(context).width * 0.04),
                 topRight:
                     Radius.circular(MediaQuery.sizeOf(context).width * 0.04),
               ),

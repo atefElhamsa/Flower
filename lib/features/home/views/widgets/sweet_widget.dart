@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SweetWidget extends StatefulWidget {
-  const SweetWidget({super.key,required this.itemCount});
+  const SweetWidget({super.key, required this.itemCount});
 
   final int itemCount;
 

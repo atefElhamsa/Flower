@@ -79,14 +79,16 @@ class OnBoardingScreen extends StatelessWidget {
                         if (index == onBoardingView.length - 1) {
                           Navigator.pushReplacement(
                             context,
-                            MaterialPageRoute(builder: (context){
+                            MaterialPageRoute(builder: (context) {
                               return const HomeScreen();
                             }),
                           );
                         } else {
-                          pageController.animateToPage(index + 1,
-                              duration: const Duration(seconds: 1),
-                              curve: Curves.bounceIn);
+                          pageController.animateToPage(
+                            index + 1,
+                            duration: const Duration(seconds: 1),
+                            curve: Curves.easeIn,
+                          );
                         }
                       },
                       minWidth: double.infinity,

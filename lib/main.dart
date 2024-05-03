@@ -1,4 +1,4 @@
-import 'package:flower_app/features/home/views/home_screen.dart';
+import 'package:flower_app/features/splash/views/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main(){
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Flower App",
-      home: HomeScreen(),
+      home: SplashScreen(),
     );
   }
 }

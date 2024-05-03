@@ -81,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               ),
             ),
-            SliverToBoxAdapter(
+            const SliverToBoxAdapter(
               child: SweetWidget(
                 itemCount: 2,
               ),

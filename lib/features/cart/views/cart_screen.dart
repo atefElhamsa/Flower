@@ -95,7 +95,7 @@ class _CartScreenState extends State<CartScreen> {
               click: () {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context){
+                  MaterialPageRoute(builder: (context) {
                     return const OrderSuccess();
                   }),
                 );
