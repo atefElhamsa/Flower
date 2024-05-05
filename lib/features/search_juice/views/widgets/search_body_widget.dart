@@ -32,24 +32,24 @@ class SearchBodyWidget extends StatelessWidget {
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                          return ProductDetailsScreen(
-                            title: searchList.isEmpty
-                                ? juices[index].title
-                                : searchList[index].title,
-                            description: searchList.isEmpty
-                                ? juices[index].description
-                                : searchList[index].description,
-                            image: searchList.isEmpty
-                                ? juices[index].image
-                                : searchList[index].image,
-                            price: searchList.isEmpty
-                                ? juices[index].price
-                                : searchList[index].price,
-                            count: searchList.isEmpty
-                                ? juices[index].count
-                                : searchList[index].count,
-                          );
-                        }));
+                      return ProductDetailsScreen(
+                        title: searchList.isEmpty
+                            ? juices[index].title
+                            : searchList[index].title,
+                        description: searchList.isEmpty
+                            ? juices[index].description
+                            : searchList[index].description,
+                        image: searchList.isEmpty
+                            ? juices[index].image
+                            : searchList[index].image,
+                        price: searchList.isEmpty
+                            ? juices[index].price
+                            : searchList[index].price,
+                        count: searchList.isEmpty
+                            ? juices[index].count
+                            : searchList[index].count,
+                      );
+                    }));
                   },
                   child: Container(
                     padding: EdgeInsets.symmetric(
@@ -76,7 +76,7 @@ class SearchBodyWidget extends StatelessWidget {
                             children: [
                               SizedBox(
                                 height:
-                                MediaQuery.sizeOf(context).height * 0.01,
+                                    MediaQuery.sizeOf(context).height * 0.01,
                               ),
                               Text(
                                 searchList.isEmpty
@@ -87,14 +87,14 @@ class SearchBodyWidget extends StatelessWidget {
                                     fontWeight: FontWeight.w400,
                                     color: AppColors.brown,
                                     fontSize:
-                                    MediaQuery.sizeOf(context).height *
-                                        0.025,
+                                        MediaQuery.sizeOf(context).height *
+                                            0.025,
                                   ),
                                 ),
                               ),
                               SizedBox(
                                 height:
-                                MediaQuery.sizeOf(context).height * 0.01,
+                                    MediaQuery.sizeOf(context).height * 0.01,
                               ),
                               Text(
                                 searchList.isEmpty
@@ -105,14 +105,14 @@ class SearchBodyWidget extends StatelessWidget {
                                     fontWeight: FontWeight.w400,
                                     color: AppColors.brown.withOpacity(0.65),
                                     fontSize:
-                                    MediaQuery.sizeOf(context).height *
-                                        0.02,
+                                        MediaQuery.sizeOf(context).height *
+                                            0.02,
                                   ),
                                 ),
                               ),
                               SizedBox(
                                 height:
-                                MediaQuery.sizeOf(context).height * 0.03,
+                                    MediaQuery.sizeOf(context).height * 0.03,
                               ),
                               Row(
                                 children: [
@@ -122,17 +122,15 @@ class SearchBodyWidget extends StatelessWidget {
                                       textStyle: TextStyle(
                                         fontWeight: FontWeight.w500,
                                         color: AppColors.brown,
-                                        fontSize: MediaQuery.sizeOf(context)
-                                            .height *
-                                            0.025,
+                                        fontSize:
+                                            MediaQuery.sizeOf(context).height *
+                                                0.025,
                                       ),
                                     ),
                                   ),
                                   const Spacer(),
                                   InkWell(
-                                    onTap: () {
-
-                                    },
+                                    onTap: () {},
                                     child: Container(
                                       decoration: BoxDecoration(
                                         color: AppColors.brown,

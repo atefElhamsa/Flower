@@ -1,7 +1,7 @@
 import 'package:flower_app/features/splash/views/splash_screen.dart';
 import 'package:flutter/material.dart';
 
-void main(){
+void main() {
   runApp(const MyApp());
 }
 
