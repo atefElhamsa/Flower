@@ -1,6 +1,7 @@
 import 'package:flower_app/core/utils/app_images.dart';
 import 'package:flower_app/core/utils/app_texts.dart';
 import 'package:flower_app/features/best/views/see_best_selling.dart';
+import 'package:flower_app/features/cart/views/cart_screen.dart';
 import 'package:flower_app/features/home/data/models/drinkmodel.dart';
 import 'package:flower_app/features/home/views/widgets/bannar_widget.dart';
 import 'package:flower_app/features/home/views/widgets/category_widget.dart';
@@ -34,7 +35,36 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      drawer: const Drawer(),
+      drawer: Drawer(
+        child: Center(
+          child: TextButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) {
+                  return const CartScreen();
+                }),
+              );
+            },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Cart",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: MediaQuery.sizeOf(context).height * 0.05,
+                  ),
+                ),
+                Icon(
+                  Icons.add_shopping_cart_rounded,
+                  size: MediaQuery.sizeOf(context).height * 0.05,
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
       body: Padding(
         padding: EdgeInsets.all(MediaQuery.sizeOf(context).width * 0.04),
         child: CustomScrollView(

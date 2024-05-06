@@ -33,21 +33,7 @@ class SearchBodyWidget extends StatelessWidget {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
                       return ProductDetailsScreen(
-                        title: searchList.isEmpty
-                            ? juices[index].title
-                            : searchList[index].title,
-                        description: searchList.isEmpty
-                            ? juices[index].description
-                            : searchList[index].description,
-                        image: searchList.isEmpty
-                            ? juices[index].image
-                            : searchList[index].image,
-                        price: searchList.isEmpty
-                            ? juices[index].price
-                            : searchList[index].price,
-                        count: searchList.isEmpty
-                            ? juices[index].count
-                            : searchList[index].count,
+                        item: searchList.isEmpty ? juices[index]: searchList[index],
                       );
                     }));
                   },

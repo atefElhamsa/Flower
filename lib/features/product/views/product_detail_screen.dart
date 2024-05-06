@@ -1,26 +1,16 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:flower_app/core/utils/app_colors.dart';
 import 'package:flower_app/features/product/views/widgets/product_body.dart';
+import 'package:flower_app/features/search_juice/views/data/models/juicemodel.dart';
 import 'package:flutter/material.dart';
-
 import '../../../core/utils/app_images.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
-  ProductDetailsScreen({
+  const ProductDetailsScreen({
     super.key,
-    required this.title,
-    required this.description,
-    required this.image,
-    required this.price,
-    required this.count,
+    required this.item
   });
 
-  final String title;
-  final String description;
-  final String image;
-  double price;
-  int count;
+  final JuiceModel item;
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +35,7 @@ class ProductDetailsScreen extends StatelessWidget {
           ),
         ),
         title: Image.asset(
-          image,
+          item.image,
           height: MediaQuery.sizeOf(context).height * 0.25,
           fit: BoxFit.cover,
         ),
@@ -64,11 +54,7 @@ class ProductDetailsScreen extends StatelessWidget {
         ],
       ),
       body: ProductBodyWidget(
-        title: title,
-        price: price,
-        image: image,
-        description: description,
-        count: count,
+        item: item,
       ),
     );
   }

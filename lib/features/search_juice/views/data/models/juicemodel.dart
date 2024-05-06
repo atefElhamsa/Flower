@@ -5,7 +5,8 @@ class JuiceModel {
   final String title;
   final String description;
   final String image;
-  double price;
+  final double price;
+  bool addCart;
   int count;
   JuiceModel({
     required this.title,
@@ -13,6 +14,7 @@ class JuiceModel {
     required this.image,
     required this.price,
     this.count = 0,
+    this.addCart = false,
   });
 }
 
@@ -42,3 +44,5 @@ List<JuiceModel> juices = [
     price: 45,
   ),
 ];
+
+

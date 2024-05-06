@@ -1,8 +1,7 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:flower_app/features/cart/views/cart_screen.dart';
 import 'package:flower_app/features/product/views/widgets/navigate_container.dart';
 import 'package:flower_app/features/product/views/widgets/total.dart';
+import 'package:flower_app/features/search_juice/views/data/models/juicemodel.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../../core/utils/app_colors.dart';
@@ -10,37 +9,18 @@ import '../../../../core/utils/app_texts.dart';
 import '../../../../core/widgets/divider.dart';
 
 class ProductBodyWidget extends StatefulWidget {
-  ProductBodyWidget({
+  const ProductBodyWidget({
     super.key,
-    required this.title,
-    required this.price,
-    required this.image,
-    required this.description,
-    required this.count,
+    required this.item,
   });
 
-  final String title;
-  final String image;
-  final String description;
-  double price;
-  int count;
+  final JuiceModel item;
 
   @override
   State<ProductBodyWidget> createState() => _ProductBodyWidgetState();
 }
 
 class _ProductBodyWidgetState extends State<ProductBodyWidget> {
-  int count = 0;
-  void addCount() {
-    count += 1;
-  }
-
-  void minusCount() {
-    if (count > 0) {
-      count -= 1;
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -58,7 +38,7 @@ class _ProductBodyWidgetState extends State<ProductBodyWidget> {
             Row(
               children: [
                 Text(
-                  widget.title,
+                  widget.item.title,
                   style: GoogleFonts.pangolin(
                     textStyle: TextStyle(
                       fontWeight: FontWeight.w400,
@@ -69,7 +49,7 @@ class _ProductBodyWidgetState extends State<ProductBodyWidget> {
                 ),
                 const Spacer(),
                 Text(
-                  "${widget.price.toString()} LE",
+                  "${widget.item.price.toString()} LE",
                   style: GoogleFonts.roboto(
                     textStyle: TextStyle(
                       fontWeight: FontWeight.w400,
@@ -120,7 +100,9 @@ class _ProductBodyWidgetState extends State<ProductBodyWidget> {
                     GestureDetector(
                       onTap: () {
                         setState(() {
-                          minusCount();
+                          if (widget.item.count > 0) {
+                            widget.item.count -= 1;
+                          }
                         });
                       },
                       child: Icon(
@@ -131,7 +113,7 @@ class _ProductBodyWidgetState extends State<ProductBodyWidget> {
                     ),
                     const Spacer(),
                     Text(
-                      count.toString(),
+                      widget.item.count.toString(),
                       style: GoogleFonts.roboto(
                         textStyle: TextStyle(
                           fontSize: MediaQuery.sizeOf(context).height * 0.025,
@@ -144,7 +126,7 @@ class _ProductBodyWidgetState extends State<ProductBodyWidget> {
                     GestureDetector(
                       onTap: () {
                         setState(() {
-                          addCount();
+                          widget.item.count += 1;
                         });
                       },
                       child: Icon(
@@ -161,8 +143,8 @@ class _ProductBodyWidgetState extends State<ProductBodyWidget> {
               height: MediaQuery.sizeOf(context).height * 0.1,
             ),
             TotalContainer(
-              count: count,
-              price: widget.price,
+              count: widget.item.count,
+              price: widget.item.price,
             ),
             SizedBox(
               height: MediaQuery.sizeOf(context).height * 0.03,
@@ -170,15 +152,15 @@ class _ProductBodyWidgetState extends State<ProductBodyWidget> {
             NavigateContainer(
               title: AppTexts.addToCart,
               click: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return CartScreen(
-                    title: widget.title,
-                    description: widget.description,
-                    image: widget.image,
-                    price: widget.price,
-                    count: widget.count,
+                setState(() {
+                  widget.item.addCart = true;
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context){
+                      return const CartScreen();
+                    }),
                   );
-                }));
+                });
               },
             ),
           ],
