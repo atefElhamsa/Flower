@@ -44,5 +44,3 @@ List<JuiceModel> juices = [
     price: 45,
   ),
 ];
-
-

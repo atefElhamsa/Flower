@@ -19,15 +19,20 @@ class AppTexts {
   static const String chocolateMilkshake = "Chocolate Milkshake";
   static const String mangoMilkshake = "Mango Milkshake";
   static const String cart = "Cart";
-  static const String descriptionOreo = "There are many variations of \n passages of Lorem Ipsum";
-  static const String descriptionVanilla = "There are many variations of \n passages of Lorem Ipsum";
-  static const String descriptionChocolate = "There are many variations of \n passages of Lorem Ipsum";
-  static const String descriptionMango = "There are many variations of \n passages of Lorem Ipsum";
+  static const String descriptionOreo =
+      "There are many variations of \n passages of Lorem Ipsum";
+  static const String descriptionVanilla =
+      "There are many variations of \n passages of Lorem Ipsum";
+  static const String descriptionChocolate =
+      "There are many variations of \n passages of Lorem Ipsum";
+  static const String descriptionMango =
+      "There are many variations of \n passages of Lorem Ipsum";
   static const String total = "Total";
   static const String selectedItems = "Selected items";
   static const String addToCart = "Add to cart";
   static const String confirm = "Confirm";
   static const String price = "Price";
   static const String backToHome = "Back to home";
-  static const String orderConfirmedSuccessfully = "Order confirmed successfully";
+  static const String orderConfirmedSuccessfully =
+      "Order confirmed successfully";
 }

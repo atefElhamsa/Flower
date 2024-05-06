@@ -5,10 +5,7 @@ import 'package:flutter/material.dart';
 import '../../../core/utils/app_images.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
-  const ProductDetailsScreen({
-    super.key,
-    required this.item
-  });
+  const ProductDetailsScreen({super.key, required this.item});
 
   final JuiceModel item;
 

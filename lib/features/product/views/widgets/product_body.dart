@@ -156,7 +156,7 @@ class _ProductBodyWidgetState extends State<ProductBodyWidget> {
                   widget.item.addCart = true;
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context){
+                    MaterialPageRoute(builder: (context) {
                       return const CartScreen();
                     }),
                   );
